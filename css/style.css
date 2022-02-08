@@ -1217,32 +1217,69 @@ address {
 }
 
 .input-policy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.policy-check {
+  display: none;
 }
 
 .policy-text {
-  font-weight: normal;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
 }
 
+.policy-text span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 7px;
+  width: 16px;
+  height: 15px;
+  border: 2px solid #000000;
+  border-radius: 2px;
+}
+
+.policy-icon {
+  fill: transparent;
+}
+
+.policy-check:checked + .policy-text span {
+  border: 0;
+  background-color: var(--acent-color);
+  transition-property: background-color, border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.policy-check:checked + .policy-text .policy-icon {
+  fill: var(--basic-white-color);
+}
+
 .conditions {
-  font-weight: normal;
+  font-weight: 500;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--acent-color);
 }
 
+.box-send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .button-send {
-  position: absolute;
-  left: 50%;
-  bottom: 40px;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  padding: 0;
   width: 200px;
   height: 50px;
   font-weight: 700;
